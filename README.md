@@ -1,4 +1,4 @@
-GTC_HTML5Node
+GTC_HTML5Note
 =============
 
 HTML5学习手册
