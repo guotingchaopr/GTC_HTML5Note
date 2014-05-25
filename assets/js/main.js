@@ -1,7 +1,30 @@
-$(function () {
-    $('.ui.sidebar').first().sidebar('attach events', '#showSidBtn');
-    var handler;
-    $('#showSidBtn').first().sidebar('attach events', '.styled.example .button');
+window.semantic = {
+	handler: {}
+};
+semantic.ready = function () {
+	var menu = {};
+	menu = {
+		mouseenter: function () {
+			$(this).stop().animate({
+				width: '155px'
+			}, 300, function () {
+				$(this).find('.text').show();
+			});
+		},
+		mouseleave: function (event) {
+			$(this).find('.text').hide();
+			$(this).stop().animate({
+				width: '70px'
+			}, 300);
+		}
+	};
+	var $sidebarButton = $("#showSidBtn"),
+		$uiSidebar = $(".ui.sidebar");
+	$sidebarButton.on('mouseenter', menu.mouseenter)
+		.on('mouseleave', menu.mouseleave);
+	$uiSidebar.sidebar('attach events', '#showSidBtn');
 
-    $('#showSidBtn').first().sidebar('attach events', '.floating.example .button');
-});
+}
+$(function () {
+	semantic.ready();
+})
