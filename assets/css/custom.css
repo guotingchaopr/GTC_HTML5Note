@@ -30,7 +30,7 @@ body {
 	padding-bottom: 0px;
 }
 .masthead.segment:before {
-	background: #00B5AD url(/assets/img/banner.jpg) repeat fixed 0% 0%;
+	background: #00B5AD url(assets/img/banner.jpg) repeat fixed 0% 0%;
 	position: absolute;
 	z-index: 1;
 	width: 500%;
