@@ -25,7 +25,7 @@ body {
 	border-bottom: none;
 }
 .ui .masthead.segment h1 {
-	font-family: 'Dancing Script', cursive;
+	font-family: 'Piedra', cursive;
 	font-size: 5em;
 	line-height: 1.2;
 	margin: -20px 0px 0px;
@@ -35,7 +35,7 @@ body {
 	font-size: 2.5rem;
 }
 .masthead.segment:before {
-	background: #00B5AD url(/assets/img/banner.jpg) repeat fixed 0% 0%;
+	background: #00B5AD url(../img/banner.jpg) repeat fixed 0% 0%;
 	position: absolute;
 	z-index: 1;
 	width: 500%;
