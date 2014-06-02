@@ -1,6 +1,6 @@
 {
-  "name": "hexo-site",
-  "version": "",
+  "name": "HTML5Note",
+  "version": "2.6.1",
   "private": true,
   "dependencies": {
     "hexo-renderer-ejs": "*",

@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Piedra';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/Piedra-Regular.ttf);
+}
 /********************************
 			Custom
 ********************************/
@@ -5,7 +11,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-image: url("/assets/img/bg_bottom.png");
+	background-image: url("/images/bg_bottom.png");
 	font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 #showSidBtn {
@@ -35,7 +41,7 @@ body {
 	font-size: 2.5rem;
 }
 .masthead.segment:before {
-	background: #00B5AD url(../img/banner.jpg) repeat fixed 0% 0%;
+	background: #00B5AD url(/images/banner.jpg) repeat fixed 0% 0%;
 	position: absolute;
 	z-index: 1;
 	width: 500%;

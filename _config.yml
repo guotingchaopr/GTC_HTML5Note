@@ -3,16 +3,16 @@
 ## Source: https://github.com/tommy351/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-email:
-language:
+title: HTML5 NOTE
+subtitle: HTML5学习笔记
+description: 个人学习笔记
+author: guotingchao
+email: guotingchaopr@gmail.com
+language: zh-TW
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://www.quanlide.com
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
@@ -57,8 +57,8 @@ tag: 2
 ## Hexo uses Connect as a server
 ## You can customize the logger format as defined in
 ## http://www.senchalabs.org/connect/logger.html
-port: 4000
-server_ip: 0.0.0.0
+port: 80
+server_ip: 127.0.0.1
 logger: false
 logger_format:
 
@@ -80,7 +80,8 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
-theme: landscape
+##theme: landscape
+theme: MYLife
 exclude_generator:
 
 # Deployment
