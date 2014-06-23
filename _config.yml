@@ -88,4 +88,4 @@ exclude_generator:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: github
-  repo: https://github.com/guotingchaopr/GTC_HTML5Note.git
+  repository: https://github.com/guotingchaopr/GTC_HTML5Note.git
