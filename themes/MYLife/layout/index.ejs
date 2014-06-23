@@ -2,7 +2,7 @@
 
     <body class="ui">
         <!-- top -->
-        <%- js( '/js/sliderbar.js') %>
+        <%- js( 'js/sliderbar.js') %>
             <!-- top end-->
             <div class="masthead segment">
                 <div class="ui page grid">
@@ -11,10 +11,10 @@
                             <h1 class="ui header"><%= config.title %></h1>
                             <h2 class="ui header"><%= config.subtitle %></h2>
                             <p class="ui  black large labeled launch icon button">
-                                <i class="user icon"></i>config.author
+                                <i class="user icon"></i><%- config.author %>
                             </p>
                             <p class="ui black large labeled launch icon button">
-                                <i class="mail icon"></i>config.email
+                                <i class="mail icon"></i><%- config.email %>
                             </p>
                             <a class="ui black large labeled launch icon button showAll"><i class="icon list layout"></i> 浏览所有章节</a>
                         </div>

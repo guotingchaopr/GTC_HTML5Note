@@ -8,12 +8,12 @@ subtitle: HTML5学习笔记
 description: 个人学习笔记
 author: guotingchao
 email: guotingchaopr@gmail.com
-language: zh-TW
+language: zh-CN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-#url: http://www.quanlide.com
-#root: /
+url: http://guotingchaopr.github.io #http://www.quanlide.com
+root: /GTC_HTML5Note/
 #permalink: :year/:month/:day/:title/
 #tag_dir: tags
 #archive_dir: archives
@@ -88,4 +88,5 @@ exclude_generator:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: github
-  repository: https://github.com/guotingchaopr/GTC_HTML5Note.git
+  repo: https://github.com/guotingchaopr/GTC_HTML5Note.git
+  message: "添加文章"
