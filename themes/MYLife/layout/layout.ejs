@@ -1,0 +1,9 @@
+<% if (page.layout=='post'){ %>
+ 	  <%- partial('_partial/head') %>
+      <%- partial('_partial/sidebar',{item: page,table: true}) %>
+      <%- partial('_partial/footer') %>
+<% } else { %>
+ 	  <%- partial('_partial/head') %>
+  	  <%- partial('_partial/sidebar',{item: page,table: true}) %>
+      <%- partial('_partial/footer') %>
+<% } %>

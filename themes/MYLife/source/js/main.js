@@ -19,7 +19,7 @@ semantic.ready = function () {
 		}
 	};
 	var $sidebarButton = $("#showSidBtn"),
-		$uiSidebar = $(".ui.sidebar");
+		$uiSidebar = $(".ui header .sidebar");
 	$sidebarButton.on('mouseenter', menu.mouseenter)
 		.on('mouseleave', menu.mouseleave);
 	$uiSidebar.sidebar('attach events', '#showSidBtn');

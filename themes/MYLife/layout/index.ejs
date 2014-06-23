@@ -1,50 +1,14 @@
-<%- partial( '_partial/head') %>
+<div id="main">
 
-    <body class="ui">
-        <!-- top -->
-        <%- js( 'js/sliderbar.js') %>
-            <!-- top end-->
-            <div class="masthead segment">
-                <div class="ui page grid">
-                    <div class="column">
-                        <div class="introduction">
-                            <h1 class="ui header"><%= config.title %></h1>
-                            <h2 class="ui header"><%= config.subtitle %></h2>
-                            <p class="ui  black large labeled launch icon button">
-                                <i class="user icon"></i><%- config.author %>
-                            </p>
-                            <p class="ui black large labeled launch icon button">
-                                <i class="mail icon"></i><%- config.email %>
-                            </p>
-                            <a class="ui black large labeled launch icon button showAll"><i class="icon list layout"></i> 浏览所有章节</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="content">
-                <pre class="language-javascript">
-            <code>
-                var canvas = document.getElementById('canvas');
-                var html5  = canvas.getContext('2d');
-                    html5.transform(1,0,0,1,200,150);
-                    html5.beginPath();
-                    html5.fillStyle='rgba(255,0,0,0.25)';
-                    rad=18*Math.PI/90;
-                    for(i=0;i<10;i++){
-                        html5.fillRect(0,0,100,100);
-                        html5.transform(Math.cos(rad),Math.sin(rad),-Math.sin(rad),Math.cos(rad),0,0);
-                        html5.closePath();
-                    }
-                      html5.fill();
-            </code>
-		</pre>
-                <canvas id="canvas" width="800" height="300" />
-            </div>
-            <script>
-                var canvas = document.getElementById('canvas');
-                canvas.style.width = document.body.clientWidth + "px";
-                canvas.style.height = "auto";
-                var html5 = canvas.getContext('2d');
 
-            </script>
-            <%- partial( '_partial/footer') %>
+		<% page.posts.each(function(item){ %>
+			<%- partial( '_partial/article', {item: item, index: true,desc: true}) %>
+		<% }); %>
+
+
+		<% if (page.total>1){ %>
+			<nav id="page-nav" class="clearfix">
+				<%- paginator({ prev_text: '&laquo; Prev', next_text: 'Next &raquo;' }) %>
+			</nav>
+		<% } %>
+</div>

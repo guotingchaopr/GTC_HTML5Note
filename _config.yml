@@ -1,6 +1,6 @@
-# Hexo Configuration
-## Docs: http://hexo.io/docs/configuration.html
-## Source: https://github.com/tommy351/hexo/
+widgets:
+- category
+#- rss
 
 # Site
 title: HTML5 NOTE
@@ -14,10 +14,10 @@ language: zh-CN
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://guotingchaopr.github.io #http://www.quanlide.com
 root: /GTC_HTML5Note/
-#permalink: :year/:month/:day/:title/
-#tag_dir: tags
-#archive_dir: archives
-#category_dir: categories
+permalink: :year/:month/:day/:title/
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
 #code_dir: downloads/code
 
 # Directory
