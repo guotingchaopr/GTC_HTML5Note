@@ -1,0 +1,36 @@
+<!--header -->
+	<header>
+		<div class="main nav">
+			<div class="ui large vertical inverted labeled icon sidebar menu" style="width: 130px !important;">
+				<% for (var i in theme.menu){ %>
+					<a class="item" href="<%- theme.menu[i] %>">
+						<i class="<%- theme.menu_icon[i] %> icon"></i ><%- i %>
+					</a>
+        		<% } %>
+			</div >
+			<div class="ui black huge launch right attached button"  id="showSidBtn">
+				<i class="icon list layout"></i>
+					<span class="text" style="display:none;">导航</span>
+			</div>
+		</div>
+		<!-- top end-->
+		<div class="masthead segment">
+			<div class="ui page grid">
+				<div class="column">
+					<div class="introduction">
+						<h1 class="ui header"><%= config.title %></h1>
+						<h2 class="ui header"><%= config.subtitle %></h2>
+						<p class="ui  black large labeled launch icon button">
+							<i class="user icon"></i>
+							<%- config.author %>
+						</p>
+						<p class="ui black large labeled launch icon button">
+							<i class="mail icon"></i>
+							<%- config.email %>
+						</p>
+						<a class="ui black large labeled launch icon button showAll"><i class="icon list layout"></i> 浏览所有章节</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>

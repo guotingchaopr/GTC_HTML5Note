@@ -1,6 +1,5 @@
 title: 1st post title
 date: 2014-05-01 10:15:02
-tags: test
 categories: test
 ---
 
