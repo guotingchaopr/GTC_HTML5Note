@@ -30,15 +30,18 @@ body {
 	margin-bottom: 0px;
 	border-bottom: none;
 }
-.ui .masthead.segment h1 {
+.ui .masthead.segment{
 	font-family: 'Piedra', cursive;
-	font-size: 5em;
+}
+.ui .masthead.segment h1 {
+	font-size: 3em;
+	color:#486CAC;
 	line-height: 1.2;
 	margin: -20px 0px 0px;
 	padding-bottom: 0px;
 }
 .ui .masthead.segment h2 {
-	font-size: 2.5rem;
+	font-size: 1.5rem;
 }
 .masthead.segment:before {
 	background: #00B5AD url(../images/banner.jpg) repeat fixed 0% 0%;

@@ -18,12 +18,10 @@ semantic.ready = function () {
 			}, 300);
 		}
 	};
-	var $sidebarButton = $("#showSidBtn"),
-		$uiSidebar = $(".ui header .sidebar");
-	$sidebarButton.on('mouseenter', menu.mouseenter)
-		.on('mouseleave', menu.mouseleave);
-	$uiSidebar.sidebar('attach events', '#showSidBtn');
-
+	var $sidebarButton     = $("#showSidBtn"),
+       $uiSidebar         = $(".ui header .sidebar");
+		 $sidebarButton.on('mouseenter', menu.mouseenter).on('mouseleave', menu.mouseleave);
+		 $uiSidebar.sidebar('attach events', '#showSidBtn,.showAll');
 }
 $(function () {
 	semantic.ready();
