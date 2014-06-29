@@ -1,0 +1,37 @@
+<div class="event">
+	<div class="label">
+		<%- item %>
+		<% if (item.link){ %>
+			<% if (item.title){ %>
+				<h1><a href="<%- item.link %>" target="_blank"><%= item.title %></a></h1>
+			<% } else { %>
+				<h1><a href="<%- item.link %>" target="_blank"><%= item.link %></a></h1>
+			<% } %>
+		<% } else { %>
+			<% if (index){ %>
+				<h1><a href="<%- url_for(item.path) %>"><%= item.title %></a></h1>
+			<% } else { %>
+				<h1><%= item.title %></h1>
+			<% } %>
+		<% } %>
+			<a href="<%-config.gitBase %>">
+				<img src="<%= config.userIcon %>" />
+			</a>
+	</div>
+	<div class="content">
+		<div class="summary">
+			<% if (showEntry && item.excerpt && index) { %>
+				<div class="entry">
+					<%= item.excerpt %>
+				</div>
+			<% } %>
+		</div>
+		<div class="extra text">
+			<div class="date">
+				<time datetime="<%= date(item.date, 'YYYY/M/D') %>">
+					<%= date(item.date, 'YYYY年M月D日') %>
+				</time>
+			</div>
+		</div>
+	</div>
+</div>

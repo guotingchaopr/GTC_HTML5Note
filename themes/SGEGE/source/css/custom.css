@@ -43,6 +43,9 @@ body {
 .ui .masthead.segment h2 {
 	font-size: 1.5rem;
 }
+.ui.black.button, .ui.black.buttons .button{
+	font-family: cursive;
+}
 .masthead.segment:before {
 	background: #00B5AD url(../images/banner.jpg) repeat fixed 0% 0%;
 	position: absolute;

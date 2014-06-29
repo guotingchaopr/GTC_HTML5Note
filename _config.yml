@@ -18,6 +18,8 @@ description: 个人学习笔记
 author: guotingchao
 email: guotingchaopr@gmail.com
 language: zh-CN
+userIcon: http://www.gravatar.com/avatar/99f338f6f9ee143988093e56cb40463a?s=260&d=404
+gitBase: https://github.com/guotingchaopr/GTC_HTML5Note
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
