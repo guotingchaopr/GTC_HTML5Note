@@ -12,22 +12,24 @@
       </div>
       <div class="summary">
          <% if (item.link){ %>
-			<% if (item.content.title){ %>
-				<a href="<%- item.link %>" target="_blank"><%= item.content.title %></a>
-			<% } else { %>
-				<a href="<%- item.link %>" target="_blank"><%= item.link %></a>
-			<% } %>
-		<% } else { %>
-			<% if (index){ %>
-				<a href="<%- url_for(item.path) %>"><%= item.title %></a></h1>
-			<% } else { %>
-				<%= item.title %>
-			<% } %>
-		<% } %>
+				<a href="<%- item.link %>" target="_blank">
+					<% if (item.content.title){ %>
+							<%= item.content.title %>
+					<% } else { %>
+							<%= item.link %>
+					<% } %>
+				</a>
+		  <% } else { %>
+					<% if (index){ %>
+						<a href="<%- url_for(item.path) %>"><%= item.title %></a>
+					<% } else { %>
+						<%= item.title %>
+					<% } %>
+		  <% } %>
       </div>
       <div class="extra text">
-        <%= item.excerpt %>  --<%= __('excerpt_link') %>
-      </div>
-			<% console.log( __('read_more')); %>
-    </div>
+        <%- item.excerpt %>
+			<a href="<%- url_for(item.path) %>" class="excerpt_link"> <%= __('excerpt_link') %></a>
+		</div>
+	</div>
   </div>

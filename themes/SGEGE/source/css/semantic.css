@@ -14806,7 +14806,7 @@ body.pushed.scrolling.ui.dimmable {
 /*******************************
          Activity Feed
 *******************************/
-.ui.feed a {font-size:25px;font-weight: bold;text-decoration:none;}
+.ui.feed a {font-size:28px;font-weight: bold;margin-left:6px; text-decoration:none;}
 .ui.feed a:link {color: #0079a3; text-decoration:none;}
 .ui.feed a:active:{color: #0079a3; text-decoration:none;}
 .ui.feed a:visited {color:#0079a3;text-decoration:none;}
@@ -14823,6 +14823,10 @@ body.pushed.scrolling.ui.dimmable {
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
+}
+.ui.feed .extra .excerpt_link{
+	font-size: 12px;
+	float: right;
 }
 /*******************************
             Content
