@@ -14806,7 +14806,11 @@ body.pushed.scrolling.ui.dimmable {
 /*******************************
          Activity Feed
 *******************************/
-
+.ui.feed a {font-size:25px;font-weight: bold;text-decoration:none;}
+.ui.feed a:link {color: #0079a3; text-decoration:none;}
+.ui.feed a:active:{color: #0079a3; text-decoration:none;}
+.ui.feed a:visited {color:#0079a3;text-decoration:none;}
+.ui.feed a:hover {color: #009fd8; text-decoration:none;}
 .ui.feed a {
 	cursor: pointer;
 }

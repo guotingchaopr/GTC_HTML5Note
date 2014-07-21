@@ -1,0 +1,12 @@
+# Theme Config
+menu:
+    首页: /
+    归档: /archives
+    分类: javascript:void(0);
+    关于: /about
+
+menu_icon:
+	首页: home
+	归档: archive
+	分类: tasks
+	关于: user

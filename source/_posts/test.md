@@ -1,7 +1,13 @@
-title: test
-date: {{date}}
-categories: test
-tags: test
+title: 开篇
 ---
+date: {{date}}
+categories: HTML5
+tags:  HTML5
 
-1st post is written in [markdown](http://markdown.tw/).
+ 第一篇笔记,折腾了好几天,来支付宝第一个项目一期也进入了上线,除了整理出优化点基本上也没有紧急的任务需要修复,暂时缓了一下节奏.抽空把这个笔记搭建完毕.
+ <!-- more -->
+    首先H5笔记重渲染开始写吧 中间再穿插一些小的Tip.
+	 
+
+
+ 
