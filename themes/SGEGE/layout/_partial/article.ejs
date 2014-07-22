@@ -1,36 +1,20 @@
-<article class="<%= item.layout %>">
-    <div class="article-title article-title-big">
-        <%- partial('post/title') %>
-    </div>
-
-    <div class="date-row <% if (extra) { %> hide"<% } %>">
-        <time datetime="<%= item.date.toDate().toISOString() %>"><%= item.date.format(config.date_format) %></time>
-    </div>
-
-    <div class="entry">
-        <%- item.content %>
-    </div>
-
-    <footer <% if (index) { %> class="end-sep"<% } %>>
-        <% if (index){ %>
-            <% if (item.excerpt && showContent){ %>
-                <div class="alignleft">
-                    <a href="<%- config.root %><%- item.path %>#more" class="more-link"><%= theme.excerpt_link %></a>
-                </div>
-            <% } %>
-            <% if (item.comment && config.disqus_shortname){ %>
-                <div class="alignright">
-                  <a href="<%- item.permalink %>#disqus_thread" class="comment-link">Comments</a>
-              </div>
-            <% } %>
-        <% } else { %>
-            <%- partial('post/category') %>
-            <%- partial('post/tag') %>
-        <% } %>
-        <div class="clearfix"></div>
-    </footer>
-</article>
-
+<div class="ui grid article">
+	<div class="ui two wide column"></div>
+	<div class="ui twelve wide column piled segment">
+		<article>
+			<header class="article-info clearfix">
+				  <h1 itemprop="name"><a href="<%- url_for(item.path) %>" title="<%= item.title %>" itemprop="url"><%= item.title %></a></h1>
+				   <p class="article-time">
+					 <time datetime="<%= date(item.date, 'YYYY/M/D') %>" itemprop="datePublished"><i class="time icon"></i>发表于 <%= date(item.date, 'YYYY/M/D') %></time>
+   					By <a href="<%=config.gitBase %>" title="<%= config.author %>" target="_blank" itemprop="author"><%= config.author %></a>
+				  </p>
+			</header>
+			<div class="article_content">
+				<%- item.content %>
+			</div>
+		</article>
+	</div>
+</div>
 <% if (!extra) { %>
-<%- partial('plugin/comment') %>
+	<%- partial('plugin/comment') %>
 <% } %>

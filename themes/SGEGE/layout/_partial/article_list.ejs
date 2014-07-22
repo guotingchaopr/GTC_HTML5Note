@@ -1,4 +1,4 @@
-<div class="event">
+<div class="event article_list">
     <div class="label">
      		<a href="<%-config.gitBase %>">
 				<img src="<%= config.userIcon %>" />
@@ -28,8 +28,12 @@
 		  <% } %>
       </div>
       <div class="extra text">
-        <%- item.excerpt %>
-			<a href="<%- url_for(item.path) %>" class="excerpt_link"> <%= __('excerpt_link') %></a>
+			<%= strip_html(item.excerpt).replace(/^\s*/,'').replace(/\s*$/,'') %>...
+			<a href="<%- url_for(item.path) %>" class="excerpt_link"> <%- __('excerpt_link') %></a>
 		</div>
 	</div>
-  </div>
+</div>
+<!-- Divider -->
+<div class="ui horizontal icon divider"><i class="circular heart icon"></i></div>
+
+
