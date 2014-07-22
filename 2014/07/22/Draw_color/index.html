@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  	 
+    <title>二. 颜色 | HTML5 NOTE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    <meta name="author" content="guotingchao">
+    
+    <meta name="description" content="个人学习笔记">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta property="og:title" content="二. 颜色"/>
+    <meta property="og:site_name" content="HTML5 NOTE"/>
+    
+    
+	<link rel="stylesheet" href="/GTC_HTML5Note/css/semantic.css" type="text/css">
+<link rel="stylesheet" href="/GTC_HTML5Note/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/GTC_HTML5Note/css/custom.css" type="text/css">
+
+</head>
+<body class="ui">
+
+<body>	
+	<!--header -->
+	<header class="header">
+		<div class="main nav">
+	<div class="ui large vertical inverted labeled icon sidebar menu" style="width: 130px !important;">
+		
+			<a class="item" href="/GTC_HTML5Note/">
+				<i class="home icon"></i >首页
+			</a>
+		
+			<a class="item" href="/archives">
+				<i class="archive icon"></i >归档
+			</a>
+		
+			<a class="item" href="javascript:void(0);">
+				<i class="tasks icon"></i >分类
+			</a>
+		
+			<a class="item" href="/about">
+				<i class="user icon"></i >关于
+			</a>
+		
+	</div>
+	<div class="ui black huge launch right attached button" id="showSidBtn">
+		<i class="icon list layout"></i>
+		<span class="text" style="display:none;">导航</span>
+	</div>
+</div>
+<div class="masthead segment">
+	<div class="ui page grid">
+		<div class="column">
+			<div class="introduction">
+				<h1 class="ui">HTML5 NOTE</h1>
+				<h2 class="ui">HTML5学习笔记</h2>
+				<p class="ui  black large labeled launch icon button">
+					<i class="user icon"></i>
+					guotingchao
+				</p>
+				<p class="ui black large labeled launch icon button">
+					<i class="mail icon"></i>
+					guotingchaopr@gmail.com
+				</p>
+				<a class="ui black large labeled launch icon button showAll"><i class="icon list layout"></i> 浏览所有章节</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</header>
+	<!--header -->
+		<!-- index -->
+			<div class="ui grid article">
+	<div class="ui two wide column"></div>
+	<div class="ui twelve wide column piled segment">
+		<article>
+			<header class="article-info clearfix">
+				  <h1 itemprop="name"><a href="/GTC_HTML5Note/2014/07/22/Draw_color/" title="二. 颜色" itemprop="url">二. 颜色</a></h1>
+				   <p class="article-time">
+					 <time datetime="2014/7/22" itemprop="datePublished"><i class="time icon"></i>发表于 2014/7/22</time>
+   					By <a href="https://github.com/guotingchaopr/GTC_HTML5Note" title="guotingchao" target="_blank" itemprop="author">guotingchao</a>
+				  </p>
+			</header>
+			<div class="article_content">
+				<h1 id="颜色-设置">颜色-设置</h1>
+<blockquote>
+<p>上一篇文章中使用的是非透明颜色进行的描边或填充.在实际应用中,肯定会用到其它的颜色,这可以通过绘图环境strokeStyle与fillStyle属性来设置.我们考虑在这一篇中加入对颜色的深入,比如使用透明色.<br><a id="more"></a></p>
+</blockquote>
+<p><canvas id="canvas" width="600" height="400"></canvas></p>
+<script type="text/javascript">
+    var flag = true;
+    var canvas = document.getElementById('canvas'),context= canvas.getContext('2d');
+         context.lineJoin='round',
+         context.lineWidth = 30;
+         context.font='24px Helvetica';
+         var draw = function(){
+                      context.strokeStyle='goldenrod';
+                     context.fillStyle='blue';
+                     context.strokeRect(75,100,200,200);
+                     context.fillRect(325,100,200,200);
+         }
+         context.canvas.onmousedown = function(e){
+                 context.clearRect(0,0,canvas.width,canvas.height);
+                if(flag){
+                    flag = false;
+                    context.fillText('点击绘制图形',200,40);
+                }else{
+                    context.fillText('点击擦除图形',200,40);
+                    flag = true;
+                    draw();
+                }
+         }
+         context.fillText('点击擦除图形',200,40);
+         draw();
+</script>
+
+
+<pre>
+    <code class=" language-markup">
+         &lt;canvas id="canvas" width="600" height="400">&lt;/canvas>
+         &lt;script>
+                 var falg = true;
+                 var canvas = document.getElementById('canvas'),context= canvas.getContext('2d');
+                 context.lineJoin='round',
+                 context.lineWidth = 30;
+                 context.font='24px Helvetica';
+                var draw = function(){
+                     context.strokeStyle='goldenrod';
+                     context.fillStyle='blue';
+                     context.strokeRect(75,100,200,200);
+                     context.fillRect(325,100,200,200);
+                }
+                     context.canvas.onmousedown = function(e){
+                             context.clearRect(0,0,canvas.width,canvas.height);
+                         if(flag){
+                            context.fillText('点击绘制图形',200,40);
+                            flag = false;
+                        }else{
+                            context.fillText('点击擦除图形',200,40);
+                            flag = true;
+                            draw();
+                        }
+                     }
+                     context.fillText('点击擦除图形',200,40);
+                     draw();    
+        &lt;/script>
+    </code>
+</pre>
+
+<p><em>目前我们的代码和上一篇几乎没有变化,唯一的变化是进行了颜色的修改,比如在线状和填充部分使用了 <strong>strokeStyle</strong> 和 <strong>fillStyle</strong> 来 分别设置了颜色 这个属性接受字符型的颜色串 我在这里分别将他们设置成了屎黄色和深蓝</em></p>
+<hr>
+<h1 id="颜色-渐变">颜色-渐变</h1>
+<blockquote>
+<p>上文中我们知道了设置画笔和填充的方法,现在我们开始进行颜色的Liner和Radial(线性与放射)渐变.</p>
+</blockquote>
+<h4 id="首先我们先看线性渐变">首先我们先看线性渐变</h4>
+<p><canvas id="canvas_gradiend" width="600" height="400"></canvas></p>
+<script type="text/javascript">
+              var gradiend_falg = true;
+              var gradiend_canvas = document.getElementById('canvas_gradiend'),
+                      gradiend_context= gradiend_canvas.getContext('2d'),
+                    gradiend = gradiend_context.createLinearGradient(0,0,gradiend_canvas.width,gradiend_canvas.height);
+                    gradiend_context.font='24px Helvetica';
+                    gradiend.addColorStop(0,'blue');
+                    gradiend.addColorStop(0.15,'white');
+                    gradiend.addColorStop(0.5,'purple');
+                    gradiend.addColorStop(0.75,'red');
+                    gradiend.addColorStop(1,'yellow');
+
+             var gradiend_draw = function(){
+                    gradiend_context.fillStyle=gradiend; 
+                    gradiend_context.fillRect(0,0,gradiend_canvas.width,gradiend_canvas.height);
+             }
+                    gradiend_context.canvas.onmousedown = function(e){
+                         gradiend_context.clearRect(0, 0, gradiend_canvas.width, gradiend_canvas.height);
+                         if(gradiend_falg){
+                              gradiend_context.fillStyle="black"; 
+                             gradiend_context.fillText('点击绘制图形',200,40);
+                             gradiend_falg = false;
+                        }else{
+                             gradiend_falg = true;
+                             gradiend_draw();
+                             gradiend_context.fillStyle="white"; 
+                             gradiend_context.fillText('点击擦除图形',200,40);
+                        }
+                    }
+                    gradiend_draw();    
+                    gradiend_context.fillStyle="white"; 
+                    gradiend_context.fillText('点击擦除图形',200,40);
+</script>
+
+
+<pre>
+    <code class=" language-markup">
+         &lt;canvas id="canvas" width="600" height="400">&lt;/canvas>
+         &lt;script>
+                 var falg = true;
+                 var canvas = document.getElementById('canvas'),context= canvas.getContext('2d'),gradiend = context.createLinearGradient(0,0,canvas.width,0);
+                     context.font='24px Helvetica';
+                     gradiend.addColorStop(0,'blue');
+                     gradiend.addColorStop(0.25,'white');
+                     gradiend.addColorStop(0.5,'purple');
+                     gradiend.addColorStop(0.75,'red');
+                     gradiend.addColorStop(1,'yellow');
+
+                var draw = function(){
+                     context.fillStyle=gradiend;
+                     context.rect(0,0,canvas.width,canvas,height);
+                }
+                     context.canvas.onmousedown = function(e){
+                             context.clearRect(0,0,canvas.width,canvas.height);
+                         if(flag){
+                            context.fillText('点击绘制图形',175,40);
+                            flag = false;
+                        }else{
+                            context.fillText('点击擦除图形',200,40);
+                            flag = true;
+                            draw();
+                        }
+                     }
+                     context.fillText('点击擦除图形',200,40);
+                     draw();    
+        &lt;/script>
+    </code>
+</pre>
+
+
+
+			</div>
+		</article>
+	</div>
+</div>
+
+	
+
+
+
+		<!-- index -->
+	<!-- footer -->
+ 	<!-- footer -->
+<footer class="ui center aligned  divided horizontal footer">
+	<div class="ui black circular label"></div>
+	<div class="ui green circular label"></div>
+	<div class="ui red circular label"></div>
+	<div class="ui blue circular label"></div>
+	<div class="ui purple circular label"></div>
+	<div class="ui teal circular label"></div>
+	<div class="ui black circular label"></div>
+	<div class="ui green circular label"></div>
+	<div class="ui red circular label"></div>
+	<div class="ui blue circular label"></div>
+	<div class="ui purple circular label"></div>
+	<div class="ui teal circular label"></div>
+	<div class="ui black circular label"></div>
+	<div class="ui green circular label"></div>
+	<div class="ui red circular label"></div>
+	<div class="ui blue circular label"></div>
+	<div class="ui purple circular label"></div>
+	<div class="ui teal circular label"></div>
+   <h4 class="ui inverted">&copy; 2014 guotingchaopr Corporation</h4>
+</footer>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="/GTC_HTML5Note/js/jquery.min.js" type="text/javascript"></script>
+<script src="/GTC_HTML5Note/js/semantic.min.js" type="text/javascript"></script>
+<script src="/GTC_HTML5Note/js/prism.js" type="text/javascript"></script>
+<script src="/GTC_HTML5Note/js/main.js" type="text/javascript"></script>
+
+
+	<!-- footer -->
+</body>
+</html>
