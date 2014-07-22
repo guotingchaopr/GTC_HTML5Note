@@ -1,6 +1,6 @@
 <div class="ui grid ">
 	<div class="ui two wide column"></div>
-	<div class="ui twelve wide column feed stacked segment ">
+	<div class="ui twelve wide column feed raised segment ">
 		 <% page.posts.each(function(item){ %>
         	<%- partial('_partial/article_list', {item: item, index: true, showTags:true, showEntry: true}) %>
     	<% }); %>

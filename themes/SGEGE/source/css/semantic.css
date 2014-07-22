@@ -16146,12 +16146,18 @@ ol.ui.horizontal.list li:before,
 .ui a:hover {color: #415a8d; text-decoration:none;}
 .ui a {cursor: pointer;}
 .ui.footer{
-	position: fixed;
+	position: relative;
+	bottom: 0;
 	width: 100%;
-	bottom: 10px;
+	font-size: .9em;
+	margin-top: 35px;
+	text-align: center;
 }
 .ui.article_list{
 	margin-bottom: 30px;
+}
+.ui.article article{
+	padding: 10px 0 60px 0;
 }
 .ui.article article header{
 	border-bottom: 1px solid #DBDBDB;
@@ -16168,7 +16174,14 @@ ol.ui.horizontal.list li:before,
 	color:#989898;
 	font-weight: bold;
 }
-.header{
+.ui.article article canvas{
+	position: relative;
+	border: 1px solid #DBDBDB;
+	right: -25%;
+	left: 25%;
+}
+
+.ui.header{
 	box-shadow: 2px 4px 5px rgba(3, 3, 3, 0.2);
 }
 .clearfix {
@@ -16182,4 +16195,20 @@ ol.ui.horizontal.list li:before,
 
 .clearfix:after {
 	clear: both
+}
+blockquote{
+	padding: 0 0 0 35px;
+	margin: 50px 35px 0;
+	border-left: 5px solid #DBDBDB;
+	color: #7b7b7b;
+	font-size: 16px;
+	line-height: 30px;
+	word-wrap: break-word;
+	content:"";
+	zoom: 1;
+}
+pre{
+	max-width: 80% !important;
+	margin: 25px auto !important;
+	padding: 0 !important;
 }
