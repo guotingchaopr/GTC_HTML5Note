@@ -154,15 +154,16 @@ __ Next!我们先看线性渐变 __
 
 > 这是一个简单的线性渐变,通过调用context封装好的方法 __createLinearGradient(x,y,width,height)__ 来生成一个线性渐变对象 当我们拿到了__createLinearGradient__ 对象后 我们通过 __addColorStop__ 方法添加__"颜色停止点"__, 它接受两个参数  addColorStop(double,string)  分别是 double精度的 0 ~ 1.0 之间代表颜色停止在一条线上的位置点._(ps:我们可以假想一条线的0 ~ 100% 的距离 例如设置为0.8 则可以假设在这条线的 80%的位置停止)_ 后面是一个字符类型的[DOMString](http://www.w3.org/TR/DOM-Level-3-Core/core.html#DOMString)的CSS3颜色字符串.
 
-####下面我稍微修改下我们的程序 来展现出4种不同的线性渐变
+####下面我稍微修改下我们的程序 来展现出4种不同方向的线性渐变
 <canvas id="canvas_gradiend_four" width="600" height="400"></canvas>
 <script type="text/javascript">
 			  var gradiend_four_falg = true;
 			  var gradiend_canvas_four = document.getElementById('canvas_gradiend_four'),
 			  		gradiend_context_four= gradiend_canvas_four.getContext('2d');
 					
-			  var getLinearGradient = function(width,height){
-			 		var tmp_gradiend = gradiend_context_four.createLinearGradient(0,0,width,height);
+			  var getLinearGradient = function(x,y,width,height){
+			  
+			 		var tmp_gradiend = gradiend_context_four.createLinearGradient(x,y,width,height);
 					tmp_gradiend.addColorStop(0,'blue');
 					tmp_gradiend.addColorStop(0.15,'white');
 					tmp_gradiend.addColorStop(0.5,'purple');
@@ -173,11 +174,62 @@ __ Next!我们先看线性渐变 __
 			  
 			  var gradiend_draw_four = function(){
 			  		var width = 300,height =200;
-					gradiend_context_four.fillStyle=getLinearGradient(0,height/2); 
+					
+					gradiend_context_four.fillStyle=getLinearGradient(0,0,width,0); 
+					gradiend_context_four.fillRect(0,0,width,height);
+					
+					gradiend_context_four.fillStyle=getLinearGradient(0,0,0,height); 
+					gradiend_context_four.fillRect(width,0,width,height);
+					
+					gradiend_context_four.fillStyle=getLinearGradient(0,0,width,height); 
+					gradiend_context_four.fillRect(0,height,width,height);
+					
+					gradiend_context_four.fillStyle=getLinearGradient(0,200,width,0); 
 					gradiend_context_four.fillRect(width,height,width,height);
-					
-					
 					
 			  }
 					gradiend_draw_four();    
 </script>
+
+
+__现在轮到说说放射渐变了__
+
+> 放射渐变和线性渐变一样,都有一个支撑它的函数: __createRaialGradient()__  该方法不同的地方在于它多了一个参数 R 用于设置 轴线  x,y,r,width,height,r
+
+<canvas id="canvas_gradiend_radial" width="600" height="400"></canvas>
+<script type="text/javascript">
+			  var gradiend_flag_radial = true;
+			  var gradiend_canvas_radial = document.getElementById('canvas_gradiend_radial'),
+			  		gradiend_context_radial= gradiend_canvas_radial.getContext('2d'),
+					gradiend_radial = gradiend_context_radial.createRadialGradient(gradiend_canvas_radial.width/2,gradiend_canvas_radial.height,10,gradiend_canvas_radial.width/2,0,100);
+					gradiend_context_radial.font='24px Helvetica';
+					gradiend_radial.addColorStop(0,'blue');
+					gradiend_radial.addColorStop(0.15,'white');
+					gradiend_radial.addColorStop(0.5,'purple');
+					gradiend_radial.addColorStop(0.75,'red');
+					gradiend_radial.addColorStop(1,'yellow');
+
+			 var gradiend_draw_radial = function(){
+					gradiend_context_radial.fillStyle=gradiend_radial; 
+					gradiend_context_radial.rect(0,0,gradiend_canvas_radial.width,gradiend_canvas_radial.height);
+					gradiend_context_radial.fill();
+			 }
+					gradiend_context_radial.canvas.onmousedown = function(e){
+						gradiend_context_radial.clearRect(0, 0, gradiend_canvas_radial.width, gradiend_canvas_radial.height);
+						 if(gradiend_flag_radial){
+						 	 gradiend_context_radial.fillStyle="black"; 
+							 gradiend_context_radial.fillText('点击绘制图形',220,40);
+							 gradiend_flag_radial = false;
+						}else{
+							 gradiend_flag_radial = true;	
+							 gradiend_draw_radial();
+							 gradiend_context_radial.fillStyle="black"; 
+							 gradiend_context_radial.fillText('点击擦除图形',220,40);
+						}
+					}
+					gradiend_draw_radial();    
+					gradiend_context_radial.fillStyle="black"; 
+					gradiend_context_radial.fillText('点击擦除图形',220,40);
+</script>
+
+
