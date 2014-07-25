@@ -3,7 +3,7 @@ date: 2014-07-22 14:09:10
 tags: HTML5
 ---
 
-颜色-设置
+颜色
 ===
 
 > 上一篇文章中使用的是非透明颜色进行的描边或填充.在实际应用中,肯定会用到其它的颜色,这可以通过绘图环境strokeStyle与fillStyle属性来设置.我们考虑在这一篇中加入对颜色的深入,比如使用透明色.
@@ -194,7 +194,7 @@ __ Next!我们先看线性渐变 __
 
 __现在轮到说说放射渐变了__
 
-> 放射渐变和线性渐变一样,都有一个支撑它的函数: __createRaialGradient()__  该方法不同的地方在于它多了一个参数 R 用于设置 轴线  x,y,r,width,height,r
+> 放射渐变和线性渐变一样,都有一个支撑它的函数: __createRaialGradient(xStart,yStart,rStart,xEnd,yEnd,rEnd)__  xStart,yStart	开始圆的圆心的坐标、radiusStart开始圆的半径 、xEnd,yEnd	结束圆的圆心的坐标、radiusEnd	结束圆的半径。
 
 <canvas id="canvas_gradiend_radial" width="600" height="400"></canvas>
 <script type="text/javascript">
@@ -232,4 +232,5 @@ __现在轮到说说放射渐变了__
 					gradiend_context_radial.fillText('点击擦除图形',220,40);
 </script>
 
+##### alright!基本颜色的渐变基本都介绍完毕了,在以后的文章中慢慢实践,目前只需掌握概念即可.
 
