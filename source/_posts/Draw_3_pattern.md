@@ -17,7 +17,7 @@ tags: HTML5
 <center>![demo](http://img.zdnet.com.cn/zhuanzai/8c/37/8c374f0365f2b529575d96ea180048ba.gif)</center>
 
 
-1. 首先我们还是建立一个canvas
+* 首先我们还是建立一个canvas
 <pre>
 	<code class=" language-markup">
 	 &lt;!Doctype html>
@@ -29,7 +29,7 @@ tags: HTML5
 	</code>
 </pre>	
 
-2. 然后我们将js填写上,这里我们只是先实现简单的在画布中将图形绘制上去。
+* 然后我们将js填写上,这里我们只是先实现简单的在画布中将图形绘制上去。
 
 	<pre>
 		<code class=" language-javascript">
@@ -75,7 +75,7 @@ tags: HTML5
 <br/>
 
 
-3. 接着试试平铺的,只需要修改*no-repeat* 改成 *repeat*或者其他平铺参数
+* 接着试试平铺的,只需要修改*no-repeat* 改成 *repeat*或者其他平铺参数
 <br/>
 
 <canvas id="canvas_graph_2" width="600" height="400"></canvas>
@@ -95,3 +95,9 @@ tags: HTML5
 				setInterval("fillPattern2('repeat')",60);
 			}
 </script>
+
+
+* 再接下来，我们试着添加一些 按钮添加动画的控制.
+> 比如我们玩游戏的时候 会有个操作按钮 或者 技能按钮 让我们触发来控制角色使用技能。 现在我们尝试使用这个* Pattern *来实现。
+
+
