@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
   	 
-    <title>二. 颜色 | HTML5 NOTE</title>
+    <title>二. 颜 色 | HTML5 NOTE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     <meta name="author" content="guotingchao">
     
@@ -12,7 +12,7 @@
     
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta property="og:title" content="二. 颜色"/>
+    <meta property="og:title" content="二. 颜 色"/>
     <meta property="og:site_name" content="HTML5 NOTE"/>
     
     
@@ -79,14 +79,14 @@
 	<div class="ui twelve wide column piled segment">
 		<article>
 			<header class="article-info clearfix">
-				  <h1 itemprop="name"><a href="/GTC_HTML5Note/2014/07/22/Draw_color/" title="二. 颜色" itemprop="url">二. 颜色</a></h1>
+				  <h1 itemprop="name"><a href="/GTC_HTML5Note/2014/07/22/Draw_2_color/" title="二. 颜 色" itemprop="url">二. 颜 色</a></h1>
 				   <p class="article-time">
 					 <time datetime="2014/7/22" itemprop="datePublished"><i class="time icon"></i>发表于 2014/7/22</time>
    					By <a href="https://github.com/guotingchaopr/GTC_HTML5Note" title="guotingchao" target="_blank" itemprop="author">guotingchao</a>
 				  </p>
 			</header>
 			<div class="article_content">
-				<h1 id="颜色-设置">颜色-设置</h1>
+				<h1 id="颜色">颜色</h1>
 <blockquote>
 <p>上一篇文章中使用的是非透明颜色进行的描边或填充.在实际应用中,肯定会用到其它的颜色,这可以通过绘图环境strokeStyle与fillStyle属性来设置.我们考虑在这一篇中加入对颜色的深入,比如使用透明色.<br><a id="more"></a></p>
 </blockquote>
@@ -154,10 +154,8 @@
 <p><em>目前我们的代码和上一篇几乎没有变化,唯一的变化是进行了颜色的修改,比如在线状和填充部分使用了 <strong>strokeStyle</strong> 和 <strong>fillStyle</strong> 来 分别设置了颜色 这个属性接受字符型的颜色串 我在这里分别将他们设置成了屎黄色和深蓝</em></p>
 <hr>
 <h1 id="颜色-渐变">颜色-渐变</h1>
-<blockquote>
-<p>上文中我们知道了设置画笔和填充的方法,现在我们开始进行颜色的Liner和Radial(线性与放射)渐变.</p>
-</blockquote>
-<h4 id="首先我们先看线性渐变">首先我们先看线性渐变</h4>
+<p><strong>上文中我们知道了设置画笔和填充的方法,现在我们开始进行颜色的Liner和Radial(线性与放射)渐变.</strong></p>
+<p><strong> Next!我们先看线性渐变 </strong></p>
 <p><canvas id="canvas_gradiend" width="600" height="400"></canvas></p>
 <script type="text/javascript">
               var gradiend_falg = true;
@@ -209,7 +207,7 @@
 
                 var draw = function(){
                      context.fillStyle=gradiend;
-                     context.rect(0,0,canvas.width,canvas,height);
+                     context.fillRect(0,0,canvas.width,canvas,height);
                 }
                      context.canvas.onmousedown = function(e){
                              context.clearRect(0,0,canvas.width,canvas.height);
@@ -228,7 +226,88 @@
     </code>
 </pre>
 
+<blockquote>
+<p>这是一个简单的线性渐变,通过调用context封装好的方法 <strong>createLinearGradient(x,y,width,height)</strong> 来生成一个线性渐变对象 当我们拿到了<strong>createLinearGradient</strong> 对象后 我们通过 <strong>addColorStop</strong> 方法添加<strong>“颜色停止点”</strong>, 它接受两个参数  addColorStop(double,string)  分别是 double精度的 0 ~ 1.0 之间代表颜色停止在一条线上的位置点.<em>(ps:我们可以假想一条线的0 ~ 100% 的距离 例如设置为0.8 则可以假设在这条线的 80%的位置停止)</em> 后面是一个字符类型的<a href="http://www.w3.org/TR/DOM-Level-3-Core/core.html#DOMString" target="_blank" rel="external">DOMString</a>的CSS3颜色字符串.</p>
+</blockquote>
+<h4 id="下面我稍微修改下我们的程序_来展现出4种不同方向的线性渐变">下面我稍微修改下我们的程序 来展现出4种不同方向的线性渐变</h4>
+<p><canvas id="canvas_gradiend_four" width="600" height="400"></canvas></p>
+<script type="text/javascript">
+              var gradiend_four_falg = true;
+              var gradiend_canvas_four = document.getElementById('canvas_gradiend_four'),
+                      gradiend_context_four= gradiend_canvas_four.getContext('2d');
 
+              var getLinearGradient = function(x,y,width,height){
+
+                     var tmp_gradiend = gradiend_context_four.createLinearGradient(x,y,width,height);
+                    tmp_gradiend.addColorStop(0,'blue');
+                    tmp_gradiend.addColorStop(0.15,'white');
+                    tmp_gradiend.addColorStop(0.5,'purple');
+                    tmp_gradiend.addColorStop(0.75,'red');
+                    tmp_gradiend.addColorStop(1,'yellow');
+                    return tmp_gradiend;
+              }
+
+              var gradiend_draw_four = function(){
+                      var width = 300,height =200;
+
+                    gradiend_context_four.fillStyle=getLinearGradient(0,0,width,0); 
+                    gradiend_context_four.fillRect(0,0,width,height);
+
+                    gradiend_context_four.fillStyle=getLinearGradient(0,0,0,height); 
+                    gradiend_context_four.fillRect(width,0,width,height);
+
+                    gradiend_context_four.fillStyle=getLinearGradient(0,0,width,height); 
+                    gradiend_context_four.fillRect(0,height,width,height);
+
+                    gradiend_context_four.fillStyle=getLinearGradient(0,200,width,0); 
+                    gradiend_context_four.fillRect(width,height,width,height);
+
+              }
+                    gradiend_draw_four();    
+</script>
+
+
+<p><strong>现在轮到说说放射渐变了</strong></p>
+<blockquote>
+<p>放射渐变和线性渐变一样,都有一个支撑它的函数: <strong>createRaialGradient(xStart,yStart,rStart,xEnd,yEnd,rEnd)</strong>  xStart,yStart    开始圆的圆心的坐标、radiusStart开始圆的半径 、xEnd,yEnd    结束圆的圆心的坐标、radiusEnd    结束圆的半径。</p>
+</blockquote>
+<p><canvas id="canvas_gradiend_radial" width="600" height="400"></canvas></p>
+<script type="text/javascript">
+              var gradiend_flag_radial = true;
+              var gradiend_canvas_radial = document.getElementById('canvas_gradiend_radial'),
+                      gradiend_context_radial= gradiend_canvas_radial.getContext('2d'),
+                    gradiend_radial = gradiend_context_radial.createRadialGradient(gradiend_canvas_radial.width/2,gradiend_canvas_radial.height,10,gradiend_canvas_radial.width/2,0,100);
+                    gradiend_context_radial.font='24px Helvetica';
+                    gradiend_radial.addColorStop(0,'blue');
+                    gradiend_radial.addColorStop(0.15,'white');
+                    gradiend_radial.addColorStop(0.5,'purple');
+                    gradiend_radial.addColorStop(0.75,'red');
+                    gradiend_radial.addColorStop(1,'yellow');
+
+             var gradiend_draw_radial = function(){
+                    gradiend_context_radial.fillStyle=gradiend_radial; 
+                    gradiend_context_radial.rect(0,0,gradiend_canvas_radial.width,gradiend_canvas_radial.height);
+                    gradiend_context_radial.fill();
+             }
+                    gradiend_context_radial.canvas.onmousedown = function(e){
+                        gradiend_context_radial.clearRect(0, 0, gradiend_canvas_radial.width, gradiend_canvas_radial.height);
+                         if(gradiend_flag_radial){
+                              gradiend_context_radial.fillStyle="black"; 
+                             gradiend_context_radial.fillText('点击绘制图形',220,40);
+                             gradiend_flag_radial = false;
+                        }else{
+                             gradiend_flag_radial = true;    
+                             gradiend_draw_radial();
+                             gradiend_context_radial.fillStyle="black"; 
+                             gradiend_context_radial.fillText('点击擦除图形',220,40);
+                        }
+                    }
+                    gradiend_draw_radial();    
+                    gradiend_context_radial.fillStyle="black"; 
+                    gradiend_context_radial.fillText('点击擦除图形',220,40);
+</script>
+
+<h5 id="alright!基本颜色的渐变基本都介绍完毕了,在以后的文章中慢慢实践,目前只需掌握概念即可-">alright!基本颜色的渐变基本都介绍完毕了,在以后的文章中慢慢实践,目前只需掌握概念即可.</h5>
 
 			</div>
 		</article>
